@@ -40,6 +40,22 @@ The project has the following already configured workflows:
 - codeql.yml: run CodeQL from the main branch on each push and pull request.
 - codecov.yml: run CodeCov from the main branch on each push and pull request. You need a codecov account and add your CODECOV_TOKEN to the repository secrets.
 
+## ⚠️ Warning: GitHub Actions Costs for Private Repositories
+
+**Important**: If you plan to use this template in a **private repository**, be aware that GitHub Actions usage may incur costs:
+
+- **Free tier limits**: Private repositories have limited free GitHub Actions minutes per month (2,000 minutes for free accounts).
+- **Workflow intensity**: This template includes multiple workflows that run on different operating systems (Ubuntu, macOS, Windows) and Node.js versions (20, 22, 24), which can consume minutes quickly.
+- **Daily automated workflows**: The dev publishing workflows run daily, which can add up over time.
+- **Pricing varies by OS**: macOS runners cost 10x more than Ubuntu runners, Windows runners cost 2x more.
+
+**Recommendations for private repos**:
+
+- Monitor your GitHub Actions usage in your account settings
+- Consider disabling some workflows or reducing the OS/Node.js version matrix
+- Review GitHub's [pricing for Actions](https://github.com/pricing) to understand costs
+- For public repositories, GitHub Actions are free with generous limits
+
 ## Getting Started
 
 1. Create a repository from this template using the [template feature of GitHub](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template).
